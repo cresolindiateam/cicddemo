@@ -8,7 +8,7 @@ from joblib import load
 def classify_text(text, model):
     """Classify text as spam or not."""
     prediction = model.predict([text])
-    if prediction == 1:
+    if prediction[0] == 1:
         return "Spam"
     return "Not Spam"
 
