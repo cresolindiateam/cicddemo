@@ -31,4 +31,4 @@ jobs:
     - name: Create and push to deployment branch
       run: |
         git checkout -b deployment-branch
-        git push origin deployment-branch
+        git push -f origin deployment-branch  # Using force push here
