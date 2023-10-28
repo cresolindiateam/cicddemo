@@ -23,13 +23,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Deploy to Another Branch
+    - name: Set up Git to use the token
       run: |
         git config user.name "cresolindiateam"
         git config user.email "nitesh@cresol.in"
-    - name: Deploy to Another Branch
+        git remote set-url origin https://x-access-token:${{ secrets.CICD }}@github.com/cresolindiateam/cicddemo.git
+    - name: Create and push to deployment branch
       run: |
         git checkout -b deployment-branch
         git push origin deployment-branch
-      env:
-        GITHUB_TOKEN: ${{ secrets.CICD }}   
