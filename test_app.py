@@ -3,6 +3,7 @@ import sys
 
 
 from main import classify_text #Importing classify Function from main.py file
+from dummy_model import DummyModel
 import pickle
 
 def test_classify_text():

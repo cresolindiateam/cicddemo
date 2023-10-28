@@ -1,5 +1,6 @@
 # app/main.py
 import pickle
+from dummy_model import DummyModel
 
 def classify_text(text, model):
     """Classify text as spam or not."""
