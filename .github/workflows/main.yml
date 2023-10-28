@@ -27,5 +27,9 @@ jobs:
       run: |
         git config user.name "cresolindiateam"
         git config user.email "nitesh@cresol.in"
+    - name: Deploy to Another Branch
+      run: |
         git checkout -b deployment-branch
-        git push https://${{ secrets.CICd }}@github.com/cresolindiateam/cicddemo.git HEAD:deployment-branch
+        git push origin deployment-branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.CICD }}   
