@@ -7,8 +7,8 @@ from joblib import load
 
 def classify_text(text, model):
     """Classify text as spam or not."""
-    prediction = model.predict([text])
-    if prediction[0] == 1:
+    prediction = model.predict([text]) # it is pass in [] becasue string treat as iterable thing in python
+    if prediction[0] == 1: #it gives output in list
         return "Spam"
     return "Not Spam"
 
