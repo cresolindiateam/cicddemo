@@ -1,5 +1,6 @@
 # tests/test_app.py
 import sys
+from joblib import load
 
 
 from main import classify_text #Importing classify Function from main.py file
@@ -7,8 +8,7 @@ from dummy_model import DummyModel
 import pickle
 
 def test_classify_text():
-    with open("spam_model.pkl", "rb") as f:
-        model = pickle.load(f)
+    model = load('spam_model.joblib')
 
     assert classify_text("You've won a prize!", model) == "Spam"
     #Python's assert statement allows you to write sanity checks in your code. 
